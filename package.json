@@ -10,6 +10,7 @@
     "preview": "bunx --bun vite preview"
   },
   "dependencies": {
+    "axios": "^1.9.0",
     "vue": "^3.4.21"
   },
   "devDependencies": {

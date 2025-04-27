@@ -3,7 +3,7 @@ from fastapi import HTTPException, status, Depends
 from sqlalchemy.orm import Session
 
 # 导入数据库依赖
-from app.database_utils import get_db
+from app.database.utils import get_db
 from app.models import ProductModel
 from app.schemas import ProductCreate, Product, ProductUpdate
 
