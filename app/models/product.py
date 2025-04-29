@@ -3,7 +3,7 @@ from app.models.base import Base
 
 class Product(Base):
     __tablename__ = "products"
-    
+
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False, comment="产品名称")
     description = Column(String(255), nullable=True, comment="产品描述")

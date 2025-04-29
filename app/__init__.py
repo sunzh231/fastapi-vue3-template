@@ -11,7 +11,7 @@ from app.database.init import create_tables, init_sample_data
 create_tables()
 
 # 导入路由
-from app.routes import *
+# from app.routes import *
 
 # 初始化示例数据
 init_sample_data()

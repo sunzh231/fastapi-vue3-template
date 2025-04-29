@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:d1319b07d421567950bbae764c9d367d428b1a34902b8bde8109032a7a82604e"
+content_hash = "sha256:99c32e79abf5fcf8bc66a77c5af6ea6419201237ec547961e719e5f48d9f368f"
 
 [[metadata.targets]]
 requires_python = ">=3.12"
@@ -254,6 +254,21 @@ dependencies = [
 files = [
     {file = "fastapi-0.115.12-py3-none-any.whl", hash = "sha256:e94613d6c05e27be7ffebdd6ea5f388112e5e430c8f7d6494a9d1d88d43e814d"},
     {file = "fastapi-0.115.12.tar.gz", hash = "sha256:1e2c2a2646905f9e83d32f04a3f86aff4a286669c6c950ca95b5fd68c2602681"},
+]
+
+[[package]]
+name = "fastapi-inertia"
+version = "1.0.5"
+requires_python = ">=3.9"
+summary = "An implementation of the Inertia protocol for FastAPI."
+groups = ["default"]
+dependencies = [
+    "fastapi>=0.111.0",
+    "jinja2>=3.1.4",
+]
+files = [
+    {file = "fastapi_inertia-1.0.5-py3-none-any.whl", hash = "sha256:0f102168384ad83c53e87323c3e83494ede0ef8fdc02b5199a61a6b91f6d404d"},
+    {file = "fastapi_inertia-1.0.5.tar.gz", hash = "sha256:a322fc4aa1d049cf41f001ec3227ffb9e7ffc048a1b4fe595a93fdfa25eb0460"},
 ]
 
 [[package]]
