@@ -1,3 +1,3 @@
-from .index import *
-from .demo import *
-from .product import *
+from app.routes.index import *
+from app.routes.product import *
+

@@ -1,12 +1,9 @@
 from app import app
+from app.configs.inertia_dependency import InertiaDep
+from inertia import InertiaResponse
 
-from fastapi import Request
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-
-app.mount("/templates/assets", StaticFiles(directory="templates/assets", check_dir= False), name="templates/assets")
-templates = Jinja2Templates(directory="templates")
-
-@app.get("/")
-def web_root(request: Request):
-    return templates.TemplateResponse("./index.html", {"request": request})
+@app.get('/', response_model=None)
+async def index(inertia: InertiaDep) -> InertiaResponse:
+    return await inertia.render('Index', {
+        'name': 'John Doe'
+    })

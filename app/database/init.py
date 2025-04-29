@@ -1,5 +1,5 @@
 from app.database.utils import engine, SessionLocal, Base
-from app.models.base import ProductModel
+from app.models.product import Product
 from app.schemas.base import ProductCreate
 
 # 初始化数据库表
@@ -13,7 +13,7 @@ def init_sample_data():
     db = SessionLocal()
     
     # 检查是否已有产品数据
-    products_count = db.query(ProductModel).count()
+    products_count = db.query(Product).count()
     if products_count > 0:
         print(f"数据库中已有 {products_count} 个产品记录，跳过初始化示例数据")
         db.close()
@@ -30,7 +30,7 @@ def init_sample_data():
     
     # 添加产品到数据库
     for product_data in sample_products:
-        product = ProductModel(
+        product = Product(
             name=product_data.name,
             price=product_data.price,
             description=product_data.description,
