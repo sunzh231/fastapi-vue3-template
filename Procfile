@@ -1,2 +1,2 @@
-frontend: bun watch
+frontend: bun dev
 backend: pdm dev

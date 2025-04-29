@@ -25,6 +25,6 @@ class Product(ProductBase):
     
     class Config:
         # 启用ORM模式，允许从ORM对象直接创建Pydantic模型
-        orm_mode = True
+        # orm_mode = True  # 已弃用
         # SQLAlchemy 2.0 兼容
         from_attributes = True
