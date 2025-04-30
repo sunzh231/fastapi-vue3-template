@@ -3,6 +3,7 @@
 ## 环境准备
 
 ### pyenv
+
 #### pyenv 安装指南
 
 [pyenv](https://github.com/pyenv/pyenv) 是一个简单、强大的 Python 版本管理工具，允许你在同一系统上安装和切换多个 Python 版本。
@@ -41,6 +42,7 @@ git clone https://github.com/pyenv-win/pyenv-win.git "$HOME/.pyenv"
 ```
 
 安装后，将以下路径添加到环境变量：
+
 - `%USERPROFILE%\.pyenv\pyenv-win\bin`
 - `%USERPROFILE%\.pyenv\pyenv-win\shims`
 
@@ -159,3 +161,65 @@ bun [file.js]
 
 ## 项目介绍
 
+## Docker 部署指南
+
+本项目支持使用 Docker 和 Docker Compose 进行部署，无需手动安装依赖和配置环境。
+
+### 前提条件
+
+- 安装 [Docker](https://docs.docker.com/get-docker/)
+- 安装 [Docker Compose](https://docs.docker.com/compose/install/)
+
+### 使用 Docker Compose 部署
+
+1. 克隆代码库：
+
+```bash
+git clone https://github.com/yourusername/fastapi-vue3-sample.git
+cd fastapi-vue3-sample
+```
+
+2. 使用 Docker Compose 构建并启动服务：
+
+```bash
+docker-compose up -d
+```
+
+这将启动以下服务：
+
+- Web 应用 (FastAPI + Vue3)：访问 http://localhost:8000
+- PostgreSQL 数据库
+
+3. 查看日志：
+
+```bash
+docker-compose logs -f
+```
+
+4. 停止服务：
+
+```bash
+docker-compose down
+```
+
+### 仅使用 Dockerfile
+
+如果你只想构建和运行应用容器（不包括数据库），可以使用：
+
+```bash
+# 构建镜像
+docker build -t fastapi-vue3-app .
+
+# 运行容器
+docker run -p 8000:8000 -e DATABASE_URL=postgresql://username:password@host:port/dbname fastapi-vue3-app
+```
+
+注意：使用这种方式需要提供正确的 DATABASE_URL 环境变量，指向你的 PostgreSQL 数据库。
+
+### 自定义配置
+
+你可以通过修改 `docker-compose.yml` 文件来自定义配置，如：
+
+- 修改端口映射
+- 调整环境变量
+- 添加更多服务
