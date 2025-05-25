@@ -1,0 +1,2 @@
+frontend: bun dev
+backend: uv run fastapi dev
